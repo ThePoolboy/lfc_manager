@@ -33,6 +33,14 @@ Required Dependencies to work this project:
 Important Commands to work this project:
  - Run via start_program.bat
 
+Mods that will be installed:
+ - BepInEx (Mod Manager)
+ - Skinwalkers
+ - More_Emotes
+ - HDLethalCompany
+ - AdditionalSuits
+ - ShipLoot
+
 ---
 
 ## Contributors
