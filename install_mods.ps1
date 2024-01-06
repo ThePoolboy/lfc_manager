@@ -1,3 +1,4 @@
+$game_root = Read-Host "Input the EXACT file path of your Lethal Company Installation Folder"
 $cur_directory = Get-Location
 $mod_manager = "https://github.com/BepInEx/BepInEx/releases/download/v5.4.22/BepInEx_x64_5.4.22.0.zip"
 $mod_1 = "https://thunderstore.io/package/download/RugbugRedfern/Skinwalkers/2.0.1/"
@@ -27,7 +28,6 @@ Expand-Archive -Path "$cur_directory\temp_downloads\AlexCodesGames-AdditionalSui
 New-Item -Name "temp_mod_5" -ItemType "directory" -ErrorAction SilentlyContinue
 Expand-Archive -Path "$cur_directory\temp_downloads\tinyhoot-ShipLoot-1.0.0.zip" -DestinationPath "$cur_directory\temp_mod_5" -ErrorAction SilentlyContinue
 
-$game_root = Read-Host "Input the EXACT file path of your Lethal Company Installation Folder"
 $manager_src = "$cur_directory\temp_manager\*"
 $manager_dest = $game_root
 $mod1_src = "$cur_directory\temp_mod_1\BepInEx\plugins\*"
@@ -52,3 +52,5 @@ Copy-Item -Force -Recurse -Verbose $mod3_src -Destination $mod3_dest -ErrorActio
 Copy-Item -Force -Recurse -Verbose $mod4_src -Destination $mod4_dest -ErrorAction SilentlyContinue
 Copy-Item -Force -Recurse -Verbose $mod5_src -Destination $mod5_dest -ErrorAction SilentlyContinue
 Copy-Item -Force -Recurse -Verbose $config_src -Destination $config_dest -ErrorAction SilentlyContinue
+
+Write-Output "Mods have been installed. Thanks for using LFC Manager!!!!!"
