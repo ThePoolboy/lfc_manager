@@ -4,7 +4,7 @@
 ---
 
 ## Decription
-Lethal Company mod installation tool for LIFT Fatal Company.
+Lethal Company mod installation tool for LIFT Fatal Company mod pack.
 
 ---
 
@@ -19,8 +19,7 @@ Lethal Company mod installation tool for LIFT Fatal Company.
 - GitHub
 
 **Tools**
-- Compression
-- WebRequest
+- CMD
 
 This project is version controlled via **GitHub** and is run **locally** on a **Windows** operating system.
 
@@ -32,7 +31,7 @@ Required Dependencies to work this project:
  - Windows 10/11 - 64bit
 
 Important Commands to work this project:
- - Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
+ - Run via start_program.bat
 
 ---
 
