@@ -1,10 +1,10 @@
 # LFC Manager
-###### Version 0.1 
+###### Version 0.2.6 
 
 ---
 
 ## Decription
-Lethal Company mod installation tool for LIFT Fatal Company mod pack.
+Lethal Company Mod Installation Manager.
 
 ---
 
@@ -14,6 +14,7 @@ Lethal Company mod installation tool for LIFT Fatal Company mod pack.
 
 **Languages**
 - Powershell
+- Batch
 
 **Environments**
 - GitHub
@@ -31,15 +32,18 @@ Required Dependencies to work this project:
  - Windows 10/11 - 64bit
 
 Important Commands to work this project:
- - Run via start_program.bat
+ - Run via start_program.bat (DO NOT RUN AS ADMINISTRATOR)
 
 Mods that will be installed:
  - BepInEx (Mod Manager)
  - Skinwalkers
- - More_Emotes
+ - MoreEmotes
  - HDLethalCompany
  - AdditionalSuits
  - ShipLoot
+ - LateCompany
+ - AlwaysHearActiveWalkies
+ - HelmetCameras
 
 ---
 
