@@ -131,7 +131,7 @@ do {
 
     $working_exists = Test-Path -Path "$working_directory"
 
-    #Clear-Host # Remove this when testing new mods
+    Clear-Host # Remove this when testing new mods
 
     $valid_values = "A", "B", "C", "D", "E", "F", "G", "H", "Z", 1, 2
     Write-Output "Mod Selection Menu:`n"
@@ -148,7 +148,7 @@ do {
     Write-Output "2 = EXIT INSTALLER`n"
     $install_select = Read-Host "Which mod would you like to install"
 
-    #Clear-Host # Remove this when testing new mods
+    Clear-Host # Remove this when testing new mods
     
     if ($install_select.ToUpper() -in $valid_values) {
 
