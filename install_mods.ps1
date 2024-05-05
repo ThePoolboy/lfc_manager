@@ -2,6 +2,7 @@
 $local_directory = Get-Location
 $working_directory = "$local_directory\temp_working"
 
+# Mod Downloads
 $mod_bepinex = "https://github.com/BepInEx/BepInEx/releases/download/v5.4.22/BepInEx_x64_5.4.22.0.zip"
 $mod_skinwalkers = "https://thunderstore.io/package/download/RugbugRedfern/Skinwalkers/2.0.1/"
 $mod_moreemotes = "https://thunderstore.io/package/download/Sligili/More_Emotes/1.2.2/"
@@ -12,6 +13,7 @@ $mod_latecompany = "https://thunderstore.io/package/download/anormaltwig/LateCom
 $mod_alwayshearactivewalkies = "https://thunderstore.io/package/download/Suskitech/AlwaysHearActiveWalkies/1.4.4/"
 $mod_helmetcameras = "https://thunderstore.io/package/download/RickArg/Helmet_Cameras/2.1.5/"
 
+# Downloads Exists
 $bepinex_exists = Test-Path -Path "$working_directory\BepInEx_x64_5.4.22.0.zip"
 $skinwalkers_exists = Test-Path -Path "$working_directory\RugbugRedfern-Skinwalkers-2.0.1.zip"
 $moreemotes_exists = Test-Path -Path "$working_directory\Sligili-More_Emotes-1.2.2.zip"
@@ -22,6 +24,7 @@ $latecompany_exists = Test-Path -Path "$working_directory\anormaltwig-LateCompan
 $alwayshearactivewalkies_exists = Test-Path -Path "$working_directory\Suskitech-AlwaysHearActiveWalkies-1.4.4.zip"
 $helmetcameras_exists = Test-Path -Path "$working_directory\RickArg-Helmet_Cameras-2.1.5.zip"
 
+# Plugin Source
 $src_bepinex = "$working_directory\BEPINEX\*"
 $src_skinwalkers = "$working_directory\SKINWALKERS\BepInEx\plugins\*"
 $src_moreemotes = "$working_directory\MOREEMOTES\BepInEx\plugins\*"
@@ -33,6 +36,7 @@ $src_alwayshearactivewalkies = "$working_directory\ALWAYSHEARACTIVEWALKIES\Alway
 $src_helmetcameras = "$working_directory\HELMETCAMERAS\BepInEx\plugins\*"
 $src_config = "$local_directory\custom_configs\*"
 
+# Install Functions
 function install_bepinex ($game_root) {
 
     Invoke-WebRequest -Uri $mod_bepinex -OutFile "$working_directory\BepInEx_x64_5.4.22.0.zip"
@@ -115,13 +119,20 @@ function install_helmetcameras {
 
 }
 
+################################### MAIN PROGRAM ###################################
 Write-Output "######## Welcome to LFC Manager for Lethal Company ########`n"
-
 Start-Sleep -Seconds 1
-
 $game_root = Read-Host "Input the EXACT file path of your Lethal Company Installation Folder"
 
-$manager_exists = Test-Path -Path "$game_root\BepInEx"
+# Installs Exists
+$bepinex_folder_install = Test-Path -Path "$game_root\BepInEx"
+$skinwalkers_dll_install = Test-Path -Path "$game_root\BepInEx\plugins\SkinwalkerMod.dll"
+$moreemotes_dll_install = Test-Path -Path "$game_root\BepInEx\plugins\MoreEmotes1.2.2.dll"
+$moreemotes_animationsbundle = Test-Path -Path "$game_root\BepInEx\plugins\animationsbundle"
+$moreemotes_animatorbundle = Test-Path -Path "$game_root\BepInEx\plugins\animatorbundle"
+$hdlethalcompany_dll_install = Test-Path -Path "$game_root\BepInEx\plugins\HDLethalCompany.dll"
+$hdlethalcompany_hdlethalcompany = Test-Path -Path "$game_root\BepInEx\plugins\hdlethalcompany"
+$additionalsuits_dll_install = Test-Path -Path "$game_root\BepInEx\plugins\AdditionalSuits.dll"
 $dest_plugins = "$game_root\BepInEx\plugins"
 $dest_configs = "$game_root\BepInEx\config"
 
@@ -157,7 +168,7 @@ do {
         }
         
     
-        if ($bepinex_exists -eq $false -and $install_select -ne 1 -and $manager_exists -eq $false) {
+        if ($bepinex_exists -eq $false -and $install_select -ne 1 -and $bepinex_folder_install -eq $false) {
             Write-Output "Installing BEPINEX..."
             install_bepinex($game_root)
         }
